@@ -91,6 +91,14 @@
       align-items: center;
       text-decoration: none;
     }
+    .navbar-logo-wrap {
+      background: rgba(255,255,255,0.95);
+      border-radius: 8px;
+      padding: 6px 14px;
+      display: flex;
+      align-items: center;
+      height: 52px;
+    }
     .nav-links {
       display: flex;
       gap: 28px;
@@ -275,6 +283,44 @@
       top: 68px;
       z-index: 90;
       transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .trust-bar {
+      background: var(--bg-section);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+    }
+    .trust-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .trust-icon {
+      font-size: 22px;
+    }
+    .trust-item strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .trust-item small {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .trust-sep {
+      width: 1px;
+      height: 36px;
+      background: var(--border-light);
     }
     .filters-bar.mobile-hidden {
       transform: translateY(-120%);
@@ -739,7 +785,9 @@
   <nav class="navbar">
     <div class="navbar-inner">
       <a href="#" class="logo-link">
-        <img src="logo_web_dark.png" alt="Autos Ortiz" class="header-logo">
+        <div class="navbar-logo-wrap">
+          <img src="logo_web_dark.png" alt="Autos Ortiz" class="header-logo">
+        </div>
       </a>
       <ul class="nav-links">
         <li><a href="#inventory">Inventario</a></li>
@@ -765,7 +813,7 @@
         SEMINUEVOS VERIFICADOS 2024–2025
       </div>
       <h1>Encuentra el auto que siempre quisiste, <span>al precio justo</span></h1>
-      <p>Selección curada de vehículos seminuevos verificados pieza por pieza. Financiamiento, entrega a domicilio y garantía mecánica incluida.</p>
+      <p>Selección curada de vehículos seminuevos verificados. Financiamiento disponible y garantía 30 días 50/50.</p>
       <div class="hero-actions">
         <a href="#inventory" class="btn btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0020 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
@@ -785,13 +833,39 @@
           <div class="stat-num">350+</div>
           <div class="stat-label">Vehículos vendidos</div>
         </div>
-        <div>
-          <div class="stat-num">6</div>
-          <div class="stat-label">Meses de garantía</div>
-        </div>
+
       </div>
     </div>
   </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <span class="trust-icon">🛡️</span>
+        <div>
+          <strong>Garantía 30 días</strong>
+          <small>50/50 — aplican restricciones</small>
+        </div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <span class="trust-icon">💳</span>
+        <div>
+          <strong>Financiamiento</strong>
+          <small>12 a 18 meses</small>
+        </div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <span class="trust-icon">📍</span>
+        <div>
+          <strong>Tijuana, B.C.</strong>
+          <small>Visítanos en persona</small>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- FILTERS -->
   <div class="filters-bar" id="inventory">
