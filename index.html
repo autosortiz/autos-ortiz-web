@@ -80,6 +80,17 @@
       letter-spacing: -0.5px;
     }
     .logo span { color: var(--accent); }
+    .header-logo {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
     .nav-links {
       display: flex;
       gap: 28px;
@@ -716,7 +727,9 @@
   <!-- NAV -->
   <nav class="navbar">
     <div class="navbar-inner">
-      <a href="#" class="logo">AUTO<span>S ORTIZ</span></a>
+      <a href="#" class="logo-link">
+        <img src="logo_web.png" alt="Autos Ortiz" class="header-logo">
+      </a>
       <ul class="nav-links">
         <li><a href="#inventory">Inventario</a></li>
 <li><a href="#nosotros">Nosotros</a></li>
@@ -866,7 +879,9 @@
   <footer id="nosotros">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="#" class="logo">AUTO<span>S ORTIZ</span></a>
+        <a href="#" class="logo-link">
+          <img src="logo_web.png" alt="Autos Ortiz" class="header-logo" style="height:52px;">
+        </a>
         <p>Autos Ortiz es tu mejor opción para comprar seminuevos con verificación total, garantía mecánica y entrega a domicilio en todo México.</p>
       </div>
       <div class="footer-col">
