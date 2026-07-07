@@ -252,6 +252,12 @@
       position: sticky;
       top: 68px;
       z-index: 90;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .filters-bar.mobile-hidden {
+      transform: translateY(-120%);
+      opacity: 0;
+      pointer-events: none;
     }
     .filters-inner {
       max-width: 1280px;
@@ -1318,6 +1324,30 @@
     document.getElementById('filter-trans').addEventListener('change', filterCars);
 
     renderCars(AUTOS);
+
+    // ─── HIDE FILTERS ON SCROLL (MOBILE) ───
+    (function () {
+      const bar = document.querySelector('.filters-bar');
+      if (!bar) return;
+      let lastY = 0;
+      const THRESHOLD = 5;
+
+      function onScroll() {
+        if (window.innerWidth > 768) return;
+        const y = window.scrollY;
+        if (y > lastY + THRESHOLD) {
+          bar.classList.add('mobile-hidden');
+        } else if (y < lastY - THRESHOLD) {
+          bar.classList.remove('mobile-hidden');
+        }
+        lastY = y;
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) bar.classList.remove('mobile-hidden');
+      });
+    })();
   </script>
 </body>
 </html>
