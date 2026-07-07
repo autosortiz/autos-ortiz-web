@@ -2,7 +2,7 @@
 
 Página web de exhibición y venta de vehículos seminuevos verificados.
 
-🌐 **Demo live:** https://celucentermx.github.io/autos-ortiz-web/
+🌐 **Demo live:** https://autosortiz.github.io/autos-ortiz-web/
 
 ## Características
 
@@ -23,7 +23,7 @@ Página web de exhibición y venta de vehículos seminuevos verificados.
 
 Los cambios se publican automáticamente via **GitHub Pages** desde la branch `main`.
 
-> La URL de GitHub Pages es: https://celucentermx.github.io/autos-ortiz-web/
+> La URL de GitHub Pages es: https://autosortiz.github.io/autos-ortiz-web/
 
 ## Datos reales
 
