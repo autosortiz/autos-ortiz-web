@@ -1,8 +1,8 @@
-# AutoLote MX
+# Autos Ortiz
 
 Página web de exhibición y venta de vehículos seminuevos verificados.
 
-🌐 **Demo live:** https://celucentermx.github.io/autos-lote-web/
+🌐 **Demo live:** https://celucentermx.github.io/autos-ortiz-web/
 
 ## Características
 
@@ -23,7 +23,7 @@ Página web de exhibición y venta de vehículos seminuevos verificados.
 
 Los cambios se publican automáticamente via **GitHub Pages** desde la branch `main`.
 
-> La URL de GitHub Pages es: https://celucentermx.github.io/autos-lote-web/
+> La URL de GitHub Pages es: https://celucentermx.github.io/autos-ortiz-web/
 
 ## Datos reales
 
@@ -32,4 +32,5 @@ Para usar datos reales del inventario, edita ese array o conecta a una API/ERP.
 
 ---
 
-© 2025 CeluCenter MX — Todos los derechos reservados
+© 2025 Autos Ortiz — Todos los derechos reservados
+Desarrollado por CeluCenter MX
