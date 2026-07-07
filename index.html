@@ -81,7 +81,7 @@
     }
     .logo span { color: var(--accent); }
     .header-logo {
-      height: 52px;
+      height: 44px;
       width: auto;
       object-fit: contain;
       display: block;
@@ -198,6 +198,17 @@
       max-width: 700px;
     }
     .hero h1 span { color: var(--accent); }
+    .hero-logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .hero-logo {
+      height: 80px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
+    }
     .hero p {
       font-size: 18px;
       color: var(--text-muted);
@@ -728,7 +739,7 @@
   <nav class="navbar">
     <div class="navbar-inner">
       <a href="#" class="logo-link">
-        <img src="logo_web.png" alt="Autos Ortiz" class="header-logo">
+        <img src="logo_web_dark.png" alt="Autos Ortiz" class="header-logo">
       </a>
       <ul class="nav-links">
         <li><a href="#inventory">Inventario</a></li>
@@ -746,6 +757,9 @@
     <div class="hero-bg"></div>
     <div class="hero-glow"></div>
     <div class="hero-content">
+      <div class="hero-logo-wrap">
+        <img src="logo_hero.png" alt="Autos Ortiz" class="hero-logo">
+      </div>
       <div class="hero-badge">
         <span class="dot"></span>
         SEMINUEVOS VERIFICADOS 2024–2025
@@ -880,7 +894,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="#" class="logo-link">
-          <img src="logo_web.png" alt="Autos Ortiz" class="header-logo" style="height:52px;">
+          <img src="logo_web_light.png" alt="Autos Ortiz" class="header-logo" style="height:44px;">
         </a>
         <p>Autos Ortiz es tu mejor opción para comprar seminuevos con verificación total, garantía mecánica y entrega a domicilio en todo México.</p>
       </div>
