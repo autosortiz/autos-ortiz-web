@@ -487,6 +487,112 @@
       width: 18px;
       border-radius: 3px;
     }
+
+    /* ─── Card Carousel Arrows ─── */
+    .card-gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      z-index: 5;
+      transition: background 0.2s;
+    }
+    .card-gallery-nav:hover { background: rgba(0,0,0,0.8); }
+    .card-gallery-nav.prev { left: 8px; }
+    .card-gallery-nav.next { right: 8px; }
+    .card-img-wrap:hover .card-gallery-nav { display: flex; }
+
+    /* ─── Full Gallery Modal ─── */
+    .gallery-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .gallery-modal.open { display: flex; }
+    .gallery-modal-img {
+      max-width: 90vw;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .gallery-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: #fff;
+      font-size: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-modal-close:hover { background: rgba(255,255,255,0.2); }
+    .gallery-modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: #fff;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .gallery-modal-nav:hover { background: rgba(255,255,255,0.25); }
+    .gallery-modal-nav.prev { left: 20px; }
+    .gallery-modal-nav.next { right: 20px; }
+    .gallery-modal-counter {
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      margin-top: 16px;
+      font-family: 'Inter', sans-serif;
+    }
+    .gallery-modal-thumbs {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 90vw;
+    }
+    .gallery-modal-thumb {
+      width: 60px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 4px;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+      border: 2px solid transparent;
+    }
+    .gallery-modal-thumb:hover { opacity: 0.8; }
+    .gallery-modal-thumb.active { opacity: 1; border-color: #fff; }
     .card-body {
       padding: 20px;
     }
@@ -1010,6 +1116,30 @@
     // ─── DATA ───
     const AUTOS = [
       {
+        id: 99,
+        marca: "Kia",
+        modelo: "Sportage",
+        año: 2018,
+        version: "",
+        km: "",
+        combustible: "",
+        transmision: "",
+        precioAntes: 0,
+        precioAhora: 245000,
+        imagenes: [
+          "img/autos/kia-sportage-2018/kia-sportage-2018-01.jpeg",
+          "img/autos/kia-sportage-2018/kia-sportage-2018-02.jpeg",
+          "img/autos/kia-sportage-2018/kia-sportage-2018-03.jpeg",
+          "img/autos/kia-sportage-2018/kia-sportage-2018-04.jpeg",
+          "img/autos/kia-sportage-2018/kia-sportage-2018-05.jpeg",
+          "img/autos/kia-sportage-2018/kia-sportage-2018-06.jpeg",
+          "img/autos/kia-sportage-2018/kia-sportage-2018-07.jpeg"
+        ],
+        imagen: "img/autos/kia-sportage-2018/kia-sportage-2018-01.jpeg",
+        badge: "Excelentes condiciones",
+        tag: "new"
+      },
+      {
         id: 1,
         marca: "Nissan",
         modelo: "Sentra",
@@ -1219,19 +1349,20 @@
       }
       noRes.style.display = 'none';
 
-      grid.innerHTML = filtered.map(auto => {
+      grid.innerHTML = filtered.map((auto, idx) => {
+        const imagenes = auto.imagenes || [auto.imagen];
         const badgeClass = auto.tag === 'gold' ? 'gold' : auto.tag === 'discount' ? 'gold' : '';
+        const dots = imagenes.map((_, i) => `<span class="gallery-dot ${i===0?'active':''}" data-idx="${i}"></span>`).join('');
         return `
-        <div class="car-card" data-brand="${auto.marca}" data-year="${auto.año}" data-fuel="${auto.combustible}" data-trans="${auto.transmision}" data-price="${auto.precioAhora}">
+        <div class="car-card" data-id="${auto.id}" data-brand="${auto.marca}" data-year="${auto.año}" data-fuel="${auto.combustible}" data-trans="${auto.transmision}" data-price="${auto.precioAhora}" data-images='${JSON.stringify(imagenes)}'>
           ${auto.badge ? `<span class="car-badge ${badgeClass}">${auto.badge}</span>` : ''}
           <div class="card-img-wrap">
-            <img src="${auto.imagen}" alt="${auto.marca} ${auto.modelo} ${auto.año}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80'">
+            <img src="${imagenes[0]}" alt="${auto.marca} ${auto.modelo} ${auto.año}" loading="lazy" data-idx="0" class="card-thumb-img" onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80'">
+            ${imagenes.length > 1 ? `
+            <button class="card-gallery-nav prev" onclick="cardCarousel(this,-1)">&#10094;</button>
+            <button class="card-gallery-nav next" onclick="cardCarousel(this,1)">&#10095;</button>` : ''}
             <div class="img-overlay"></div>
-            <div class="card-gallery-dots">
-              <span class="gallery-dot active"></span>
-              <span class="gallery-dot"></span>
-              <span class="gallery-dot"></span>
-            </div>
+            ${imagenes.length > 1 ? `<div class="card-gallery-dots">${dots}</div>` : ''}
           </div>
           <div class="card-body">
             <div class="card-brand">${auto.marca}</div>
@@ -1389,6 +1520,89 @@
         if (window.innerWidth > 768) bar.classList.remove('mobile-hidden');
       });
     })();
+
+    // ─── CARD CAROUSEL (thumbnail navigation) ───
+    function cardCarousel(btn, dir) {
+      const wrap = btn.closest('.card-img-wrap');
+      const img = wrap.querySelector('.card-thumb-img');
+      const dots = wrap.querySelectorAll('.gallery-dot');
+      const card = wrap.closest('.car-card');
+      let idx = parseInt(img.dataset.idx || 0);
+      let images = [];
+      try { images = JSON.parse(card.dataset.images || '[]'); } catch(e) {}
+      if (!images.length) return;
+      idx = (idx + dir + images.length) % images.length;
+      img.src = images[idx];
+      img.dataset.idx = idx;
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }
+
+    // ─── GALLERY MODAL ───
+    let gCurrent = 0, gImages = [];
+
+    function openGallery(card) {
+      try { gImages = JSON.parse(card.dataset.images || '[]'); } catch(e) { return; }
+      if (!gImages.length) return;
+      gCurrent = parseInt(card.querySelector('.card-thumb-img')?.dataset.idx || 0);
+      const modal = document.getElementById('galleryModal');
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      // Build thumbs
+      const thumbsEl = document.getElementById('galleryThumbs');
+      thumbsEl.innerHTML = gImages.map((src, i) => `<img class="gallery-modal-thumb ${i===gCurrent?'active':''}" src="${src}" onclick="showGalleryImg(${i})">`).join('');
+      showGalleryImg(gCurrent);
+    }
+
+    function showGalleryImg(idx) {
+      const modal = document.getElementById('galleryModal');
+      const img = modal.querySelector('.gallery-modal-img');
+      const counter = modal.querySelector('.gallery-modal-counter');
+      const thumbs = modal.querySelectorAll('.gallery-modal-thumb');
+      img.src = gImages[idx];
+      counter.textContent = `${idx + 1} / ${gImages.length}`;
+      thumbs.forEach((t, i) => t.classList.toggle('active', i === idx));
+      gCurrent = idx;
+    }
+
+    function galleryNav(dir) {
+      showGalleryImg((gCurrent + dir + gImages.length) % gImages.length);
+    }
+
+    function closeGallery() {
+      document.getElementById('galleryModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Click on card image opens modal
+    document.addEventListener('click', e => {
+      const img = e.target.closest('.card-thumb-img');
+      if (!img) return;
+      const card = img.closest('.car-card');
+      if (!card) return;
+      let images = [];
+      try { images = JSON.parse(card.dataset.images || '[]'); } catch(e) {}
+      if (images.length > 1) openGallery(card);
+    });
+
+    document.addEventListener('keydown', e => {
+      const modal = document.getElementById('galleryModal');
+      if (!modal.classList.contains('open')) return;
+      if (e.key === 'ArrowLeft') galleryNav(-1);
+      if (e.key === 'ArrowRight') galleryNav(1);
+      if (e.key === 'Escape') closeGallery();
+    });
   </script>
+
+  <!-- Gallery Modal -->
+  <div id="galleryModal" class="gallery-modal" onclick="if(event.target===this)closeGallery()">
+    <button class="gallery-modal-close" onclick="closeGallery()">&times;</button>
+    <img class="gallery-modal-img" src="" alt="">
+    <div class="gallery-modal-counter"></div>
+    <div class="gallery-modal-thumbs" id="galleryThumbs"></div>
+    <button class="gallery-modal-nav prev" onclick="galleryNav(-1)">&#10094;</button>
+    <button class="gallery-modal-nav next" onclick="galleryNav(1)">&#10095;</button>
+  </div>
+</body>
+</html>
 </body>
 </html>
