@@ -361,6 +361,8 @@
     <span id="statNew">0</span> nuevos
     &nbsp;|&nbsp;
     <span id="statFeatured">0</span> destacados
+    &nbsp;|&nbsp;
+    <span id="statSold">0</span> vendidos
   </div>
 
   <div class="toolbar">
@@ -445,6 +447,8 @@
               <label for="tagNew">Nuevo</label>
               <input type="radio" name="fTag" id="tagGold" value="gold" />
               <label for="tagGold">Destacado</label>
+              <input type="radio" name="fTag" id="tagSold" value="vendido" />
+              <label for="tagSold">Vendido</label>
             </div>
           </div>
         </div>
@@ -539,6 +543,7 @@ function renderCards(autos) {
           : `<div class="car-price">${fmt(auto.precioAhora)}</div>`}
         ${auto.tag === 'new' ? '<span style="font-size:11px;color:#3498db">🏷️ Nuevo</span>' : ''}
         ${auto.tag === 'gold' ? '<span style="font-size:11px;color:#f39c12">⭐ Destacado</span>' : ''}
+        ${auto.tag === 'vendido' ? '<span style="font-size:11px;color:#e63946">✓ Vendido</span>' : ''}
         <div class="car-id">#${auto.id}</div>
         <div class="car-actions">
           <button class="btn btn-edit" onclick="openEditModal(${auto.id})">Editar</button>
@@ -552,6 +557,7 @@ function updateStats() {
   document.getElementById('statTotal').textContent = allAutos.length;
   document.getElementById('statNew').textContent = allAutos.filter(a => a.tag === 'new').length;
   document.getElementById('statFeatured').textContent = allAutos.filter(a => a.tag === 'gold').length;
+  document.getElementById('statSold').textContent = allAutos.filter(a => a.tag === 'vendido').length;
 }
 
 // ══════════════════════════════════════ SEARCH ══
@@ -585,6 +591,7 @@ function renderCards(autos) {
           : `<div class="car-price">${fmt(auto.precioAhora)}</div>`}
         ${auto.tag === 'new' ? '<span style="font-size:11px;color:#3498db">🏷️ Nuevo</span>' : ''}
         ${auto.tag === 'gold' ? '<span style="font-size:11px;color:#f39c12">⭐ Destacado</span>' : ''}
+        ${auto.tag === 'vendido' ? '<span style="font-size:11px;color:#e63946">✓ Vendido</span>' : ''}
         <div class="car-id">#${auto.id}</div>
         <div class="car-actions">
           <button class="btn btn-edit" onclick="openEditModal(${auto.id})">Editar</button>

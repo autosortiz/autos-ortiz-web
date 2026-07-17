@@ -446,6 +446,30 @@
     .car-badge.sold {
       background: var(--text-dim);
     }
+    .car-card.is-sold {
+      opacity: 0.7;
+      filter: grayscale(0.6);
+    }
+    .car-card.is-sold .card-img-wrap img {
+      filter: grayscale(1);
+    }
+    .sold-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-8deg);
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      padding: 14px 36px;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      border-radius: 6px;
+      z-index: 5;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+      border: 2px solid var(--accent);
+      pointer-events: none;
+    }
     .card-img-wrap {
       position: relative;
       aspect-ratio: 16/10;
@@ -1166,9 +1190,11 @@
       grid.innerHTML = filtered.map((auto, idx) => {
         const imagenes = auto.imagenes || [auto.imagen];
         const badgeClass = auto.tag === 'gold' ? 'gold' : auto.tag === 'discount' ? 'gold' : '';
+        const isSold = auto.tag === 'vendido';
         const dots = imagenes.map((_, i) => `<span class="gallery-dot ${i===0?'active':''}" data-idx="${i}"></span>`).join('');
         return `
-        <div class="car-card" data-id="${auto.id}" data-brand="${auto.marca}" data-year="${auto.año}" data-fuel="${auto.combustible}" data-trans="${auto.transmision}" data-price="${auto.precioAhora}" data-images='${JSON.stringify(imagenes)}'>
+        <div class="car-card ${isSold ? 'is-sold' : ''}" data-id="${auto.id}" data-brand="${auto.marca}" data-year="${auto.año}" data-fuel="${auto.combustible}" data-trans="${auto.transmision}" data-price="${auto.precioAhora}" data-images='${JSON.stringify(imagenes)}'>
+          ${isSold ? '<span class="sold-overlay">VENDIDO</span>' : ''}
           ${auto.badge ? `<span class="car-badge ${badgeClass}">${auto.badge}</span>` : ''}
           <div class="card-img-wrap">
             <img src="${imagenes[0]}" alt="${auto.marca} ${auto.modelo} ${auto.año}" loading="lazy" data-idx="0" class="card-thumb-img" onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80'">
