@@ -527,7 +527,7 @@ function renderCards(autos) {
   }
   grid.innerHTML = autos.map(auto => `
     <div class="car-card">
-      <img class="car-thumb" src="${auto.imagen}" alt="${auto.marca} ${auto.modelo}"
+      <img class="car-thumb" src="${imgUrl(auto.imagen)}" alt="${auto.marca} ${auto.modelo}"
            onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80'" />
       <div class="car-body">
         ${auto.badge ? `<span class="car-badge">${auto.badge}</span>` : ''}
@@ -573,7 +573,7 @@ function renderCards(autos) {
   }
   grid.innerHTML = visible.map(auto => `
     <div class="car-card">
-      <img class="car-thumb" src="${auto.imagen}" alt="${auto.marca} ${auto.modelo}"
+      <img class="car-thumb" src="${imgUrl(auto.imagen)}" alt="${auto.marca} ${auto.modelo}"
            onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80'" />
       <div class="car-body">
         ${auto.badge ? `<span class="car-badge">${auto.badge}</span>` : ''}
@@ -637,9 +637,9 @@ function openEditModal(id) {
 
   // preview
   document.getElementById('imgPreview').innerHTML = auto.imagen
-    ? `<img src="${auto.imagen}" style="width:60px;height:45px;object-fit:cover;border-radius:6px;border:1px solid var(--border)" />` : '';
+    ? `<img src="${imgUrl(auto.imagen)}" style="width:60px;height:45px;object-fit:cover;border-radius:6px;border:1px solid var(--border)" />` : '';
   document.getElementById('imagenesPreview').innerHTML = (auto.imagenes || []).map(i =>
-    `<div><img src="${i}" /></div>`).join('');
+    `<div><img src="${imgUrl(i)}" /></div>`).join('');
 
   document.getElementById('carModal').classList.add('show');
 }
@@ -757,6 +757,12 @@ async function saveToGitHub(auto, action) {
 }
 
 // ══════════════════════════════════════ HELPERS ══
+const SITE_ROOT = 'https://autosortiz.github.io/autos-ortiz-web';
+function imgUrl(path) {
+  if (!path) return 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80';
+  if (path.startsWith('http')) return path;
+  return SITE_ROOT + '/' + path.replace(/^\/+/, '');
+}
 function showLoading(msg) {
   document.getElementById('loadingMsg').textContent = msg;
   document.getElementById('loadingOverlay').classList.add('show');
