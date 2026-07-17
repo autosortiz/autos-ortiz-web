@@ -3,12 +3,12 @@
     "id": 99,
     "marca": "Kia",
     "modelo": "Sportage",
-    "a?o": 2021,
-    "version": "LX",
+    "a?o": 2020,
+    "version": "XL",
     "km": "40000 km",
-    "combustible": "GASOLINA",
+    "combustible": "Gasolina",
     "transmision": "Automatica",
-    "precioAntes": 275000,
+    "precioAntes": 270000,
     "precioAhora": 245000,
     "imagen": "img/autos/kia-sportage-2018/kia-sportage-2018-01.jpeg",
     "imagenes": [
@@ -20,7 +20,7 @@
       "img/autos/kia-sportage-2018/kia-sportage-2018-06.jpeg",
       "img/autos/kia-sportage-2018/kia-sportage-2018-07.jpeg"
     ],
-    "badge": "Hermoso",
+    "badge": "Imperdible",
     "tag": "new"
   },
   {
