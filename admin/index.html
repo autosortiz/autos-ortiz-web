@@ -27,60 +27,8 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* ── GATE ── */
-    .gate {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .gate-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 48px 40px;
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-    }
-    .gate-box h1 { font-size: 22px; color: var(--accent); margin-bottom: 8px; }
-    .gate-box p { font-size: 14px; color: var(--muted); margin-bottom: 32px; }
-    .gate-box input {
-      width: 100%;
-      padding: 14px 16px;
-      border: 1px solid #333;
-      border-radius: 10px;
-      background: var(--bg);
-      color: #fff;
-      font-size: 16px;
-      outline: none;
-      margin-bottom: 16px;
-      transition: border-color 0.2s;
-    }
-    .gate-box input:focus { border-color: var(--accent); }
-    .gate-box button {
-      width: 100%;
-      padding: 14px;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .gate-box button:hover { background: var(--accent2); }
-    .gate-box .error {
-      color: var(--accent);
-      font-size: 13px;
-      margin-top: 12px;
-      display: none;
-    }
-
     /* ── APP ── */
-    .app { display: none; }
-    .app.show { display: block; }
+    .app { display: block; }
 
     /* ── HEADER ── */
     .header {
@@ -397,24 +345,6 @@
 </head>
 <body>
 
-<!-- ══════════════════════════════════════ GATE ══ -->
-<div class="gate" id="gate">
-  <div class="gate-box">
-    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="1.5" style="margin-bottom:16px">
-      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-    </svg>
-    <h1>Autos Ortiz — Admin</h1>
-    <p>Ingresa la contraseña para continuar</p>
-    <input type="password" id="pwInput" placeholder="Contraseña" onkeydown="if(event.key==='Enter')tryLogin()" />
-    <button onclick="tryLogin()">Entrar</button>
-    <div class="error" id="loginErr">Contraseña incorrecta</div>
-    <p style="margin-top:20px;font-size:12px">
-      <a href="https://autosortiz.github.io/autos-ortiz-web/" target="_blank">← Ver sitio público</a>
-    </p>
-  </div>
-</div>
-
 <!-- ══════════════════════════════════════ APP ══ -->
 <div class="app" id="app">
 
@@ -422,7 +352,6 @@
     <h1>🚗 Autos Ortiz — Admin</h1>
     <div class="header-right">
       <a href="https://autosortiz.github.io/autos-ortiz-web/" target="_blank" class="btn btn-logout" style="text-decoration:none">Ver sitio</a>
-      <button class="btn btn-logout" onclick="logout()">Cerrar</button>
     </div>
   </div>
 
@@ -557,37 +486,12 @@
 
 <script>
 // ══════════════════════════════════════ CONFIG ══
-const ADMIN_PW = 'autosortiz';
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyqWy04-V8gZgr34X6UfuUa5EN7SKoEXjn2pExntTJMcYAa6YG0z3AWGBX-Ilvnih4x/exec';
 
 // ══════════════════════════════════════ STATE ══
 let allAutos = [];
 let filtered = [];
 let deleteTarget = null;
-
-// ══════════════════════════════════════ GATE ══
-function tryLogin() {
-  if (document.getElementById('pwInput').value === ADMIN_PW) {
-    sessionStorage.setItem('ao_admin', ADMIN_PW);
-    initApp();
-  } else {
-    document.getElementById('loginErr').style.display = 'block';
-    document.getElementById('pwInput').value = '';
-  }
-}
-
-function logout() {
-  sessionStorage.removeItem('ao_admin');
-  location.reload();
-}
-
-function checkAuth() {
-  if (sessionStorage.getItem('ao_admin') === ADMIN_PW) {
-    document.getElementById('gate').style.display = 'none';
-    document.getElementById('app').classList.add('show');
-    initApp();
-  }
-}
 
 // ══════════════════════════════════════ INIT ══
 async function initApp() {
@@ -868,7 +772,7 @@ function showToast(msg, type) {
 }
 
 // ══════════════════════════════════════ BOOT ══
-checkAuth();
+initApp();
 </script>
 </body>
 </html>
