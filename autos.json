@@ -1,0 +1,117 @@
+[
+  {
+    "id": 99,
+    "marca": "Kia",
+    "modelo": "Sportage",
+    "año": 2018,
+    "version": "",
+    "km": "",
+    "combustible": "",
+    "transmision": "",
+    "precioAntes": 0,
+    "precioAhora": 245000,
+    "imagenes": [
+      "img/autos/kia-sportage-2018/kia-sportage-2018-01.jpeg",
+      "img/autos/kia-sportage-2018/kia-sportage-2018-02.jpeg",
+      "img/autos/kia-sportage-2018/kia-sportage-2018-03.jpeg",
+      "img/autos/kia-sportage-2018/kia-sportage-2018-04.jpeg",
+      "img/autos/kia-sportage-2018/kia-sportage-2018-05.jpeg",
+      "img/autos/kia-sportage-2018/kia-sportage-2018-06.jpeg",
+      "img/autos/kia-sportage-2018/kia-sportage-2018-07.jpeg"
+    ],
+    "imagen": "img/autos/kia-sportage-2018/kia-sportage-2018-01.jpeg",
+    "badge": "Excelentes condiciones",
+    "tag": "new"
+  },
+  {
+    "id": 98,
+    "marca": "Honda",
+    "modelo": "CR-V",
+    "año": 2014,
+    "version": "",
+    "km": "",
+    "combustible": "",
+    "transmision": "",
+    "precioAntes": 0,
+    "precioAhora": 225000,
+    "imagenes": [
+      "img/autos/honda-crv-2014/honda-crv-2014-01.jpeg",
+      "img/autos/honda-crv-2014/honda-crv-2014-02.jpeg",
+      "img/autos/honda-crv-2014/honda-crv-2014-03.jpeg",
+      "img/autos/honda-crv-2014/honda-crv-2014-04.jpeg",
+      "img/autos/honda-crv-2014/honda-crv-2014-05.jpeg",
+      "img/autos/honda-crv-2014/honda-crv-2014-06.jpeg",
+      "img/autos/honda-crv-2014/honda-crv-2014-07.jpeg",
+      "img/autos/honda-crv-2014/honda-crv-2014-08.jpeg"
+    ],
+    "imagen": "img/autos/honda-crv-2014/honda-crv-2014-01.jpeg",
+    "badge": "",
+    "tag": ""
+  },
+  {
+    "id": 97,
+    "marca": "Nissan",
+    "modelo": "Versa",
+    "año": 2018,
+    "version": "Exclusive",
+    "km": "45,000 km",
+    "combustible": "",
+    "transmision": "Automática",
+    "precioAntes": 0,
+    "precioAhora": 185000,
+    "imagenes": [
+      "img/autos/nissan-versa-2018/nissan-versa-2018-01.jpeg",
+      "img/autos/nissan-versa-2018/nissan-versa-2018-02.jpeg",
+      "img/autos/nissan-versa-2018/nissan-versa-2018-03.jpeg",
+      "img/autos/nissan-versa-2018/nissan-versa-2018-04.jpeg",
+      "img/autos/nissan-versa-2018/nissan-versa-2018-05.jpeg",
+      "img/autos/nissan-versa-2018/nissan-versa-2018-06.jpeg"
+    ],
+    "imagen": "img/autos/nissan-versa-2018/nissan-versa-2018-01.jpeg",
+    "badge": "Como nuevo",
+    "tag": "new"
+  },
+  {
+    "id": 96,
+    "marca": "Nissan",
+    "modelo": "X-Trail",
+    "año": 2017,
+    "version": "",
+    "km": "",
+    "combustible": "",
+    "transmision": "",
+    "precioAntes": 0,
+    "precioAhora": 235000,
+    "imagenes": [
+      "img/autos/nissan-xtrail-2017/nissan-xtrail-2017-01.jpeg",
+      "img/autos/nissan-xtrail-2017/nissan-xtrail-2017-02.jpeg",
+      "img/autos/nissan-xtrail-2017/nissan-xtrail-2017-03.jpeg",
+      "img/autos/nissan-xtrail-2017/nissan-xtrail-2017-04.jpeg",
+      "img/autos/nissan-xtrail-2017/nissan-xtrail-2017-05.jpeg"
+    ],
+    "imagen": "img/autos/nissan-xtrail-2017/nissan-xtrail-2017-01.jpeg",
+    "badge": "Factura a su nombre",
+    "tag": "new"
+  },
+  {
+    "id": 95,
+    "marca": "Nissan",
+    "modelo": "Versa",
+    "año": 2023,
+    "version": "",
+    "km": "",
+    "combustible": "",
+    "transmision": "Automática",
+    "precioAntes": 0,
+    "precioAhora": 250000,
+    "imagenes": [
+      "img/autos/nissan-versa-2023/nissan-versa-2023-01.jpeg",
+      "img/autos/nissan-versa-2023/nissan-versa-2023-02.jpeg",
+      "img/autos/nissan-versa-2023/nissan-versa-2023-03.jpeg",
+      "img/autos/nissan-versa-2023/nissan-versa-2023-04.jpeg"
+    ],
+    "imagen": "img/autos/nissan-versa-2023/nissan-versa-2023-01.jpeg",
+    "badge": "Cambio de propietario",
+    "tag": ""
+  }
+]

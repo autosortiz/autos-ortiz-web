@@ -1,0 +1,39 @@
+backend:
+  name: github
+  repo: autosortiz/autos-ortiz-web
+  branch: main
+  commit_messages:
+    create: 'Agregar auto'
+    update: 'Actualizar auto'
+    delete: 'Eliminar auto'
+    uploadMedia: 'Subir foto'
+    deleteMedia: 'Borrar foto'
+
+media_folder: img/autos
+public_folder: img/autos
+site_url: https://autosortiz.github.io/autos-ortiz-web
+
+collections:
+  - name: autos
+    label: Autos
+    label_singular: Auto
+    file: autos.json
+    fields:
+      - name: autos
+        label: Autos
+        widget: list
+        fields:
+          - { name: id, label: ID, widget: number, hint: 'Número único. Siguiente disponible: 100' }
+          - { name: marca, label: Marca, widget: string, hint: 'Ej: Nissan, Honda, Kia, Toyota' }
+          - { name: modelo, label: Modelo, widget: string, hint: 'Ej: Versa, CR-V, Sportage' }
+          - { name: año, label: Año, widget: number }
+          - { name: version, label: Versión, widget: string, required: false, hint: 'Ej: Exclusive, LX, SE (opcional)' }
+          - { name: km, label: Kilometraje, widget: string, required: false, hint: 'Ej: 45,000 km (opcional)' }
+          - { name: combustible, label: Combustible, widget: string, required: false }
+          - { name: transmision, label: Transmisión, widget: string, required: false }
+          - { name: precioAntes, label: Precio anterior, widget: number, default: 0, hint: 'Precio tachado. 0 si no hay descuento' }
+          - { name: precioAhora, label: Precio actual, widget: number }
+          - { name: imagen, label: Foto principal, widget: image, hint: 'Primera foto en la tarjeta' }
+          - { name: imagenes, label: Todas las fotos, widget: list, field: { name: image, label: URL foto', widget: string }, hint: ' URLs de fotos del auto' }
+          - { name: badge, label: Etiqueta, widget: string, required: false, hint: 'Ej: Como nuevo, Excelentes condiciones' }
+          - { name: tag, label: Tag, widget: string, required: false, hint: 'new = carro nuevo, gold = destacado, vacío = normal' }
