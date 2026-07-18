@@ -57,8 +57,9 @@
     "km": "45,000 km",
     "combustible": "",
     "transmision": "Automática",
-    "precioAntes": 0,
+    "precioAntes": 220000,
     "precioAhora": 185000,
+    "imagen": "img/autos/nissan-versa-2018/nissan-versa-2018-01.jpeg",
     "imagenes": [
       "img/autos/nissan-versa-2018/nissan-versa-2018-01.jpeg",
       "img/autos/nissan-versa-2018/nissan-versa-2018-02.jpeg",
@@ -67,8 +68,7 @@
       "img/autos/nissan-versa-2018/nissan-versa-2018-05.jpeg",
       "img/autos/nissan-versa-2018/nissan-versa-2018-06.jpeg"
     ],
-    "imagen": "img/autos/nissan-versa-2018/nissan-versa-2018-01.jpeg",
-    "badge": "Como nuevo",
+    "badge": "Mas km x Litro",
     "tag": "new"
   },
   {
