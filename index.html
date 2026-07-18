@@ -443,6 +443,14 @@
       bottom: 16px;
       left: 16px;
     }
+    .car-badge.gold-destacado {
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      top: 16px;
+      right: 16px;
+      left: auto;
+      bottom: auto;
+      box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
+    }
     .car-badge.sold {
       background: var(--text-dim);
     }
@@ -1196,6 +1204,7 @@
         <div class="car-card ${isSold ? 'is-sold' : ''}" data-id="${auto.id}" data-brand="${auto.marca}" data-year="${auto.año}" data-fuel="${auto.combustible}" data-trans="${auto.transmision}" data-price="${auto.precioAhora}" data-images='${JSON.stringify(imagenes)}'>
           ${isSold ? '<span class="sold-overlay">VENDIDO</span>' : ''}
           ${auto.badge ? `<span class="car-badge ${badgeClass}">${auto.badge}</span>` : ''}
+          ${auto.tag === 'gold' ? '<span class="car-badge gold-destacado">⭐ Destacado</span>' : ''}
           <div class="card-img-wrap">
             <img src="${imagenes[0]}" alt="${auto.marca} ${auto.modelo} ${auto.año}" loading="lazy" data-idx="0" class="card-thumb-img" onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80'">
             ${imagenes.length > 1 ? `
