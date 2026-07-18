@@ -8,8 +8,9 @@
     "km": "40000 km",
     "combustible": "Gasolina",
     "transmision": "Automática",
-    "precioAntes": 270000,
+    "precioAntes": 280000,
     "precioAhora": 245000,
+    "imagen": "img/autos/kia-sportage-2018/kia-sportage-2018-01.jpeg",
     "imagenes": [
       "img/autos/kia-sportage-2018/kia-sportage-2018-01.jpeg",
       "img/autos/kia-sportage-2018/kia-sportage-2018-02.jpeg",
@@ -19,7 +20,6 @@
       "img/autos/kia-sportage-2018/kia-sportage-2018-06.jpeg",
       "img/autos/kia-sportage-2018/kia-sportage-2018-07.jpeg"
     ],
-    "imagen": "img/autos/kia-sportage-2018/kia-sportage-2018-01.jpeg",
     "badge": "Imperdible",
     "tag": "new"
   },
