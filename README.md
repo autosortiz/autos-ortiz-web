@@ -3,6 +3,7 @@
 Página web de exhibición y venta de vehículos seminuevos verificados.
 
 🌐 **Demo live:** https://autosortiz.github.io/autos-ortiz-web/
+🌍 **Dominio personalizado:** http://ortizautomotriz.com/
 
 ## Características
 
@@ -23,7 +24,8 @@ Página web de exhibición y venta de vehículos seminuevos verificados.
 
 Los cambios se publican automáticamente via **GitHub Pages** desde la branch `main`.
 
-> La URL de GitHub Pages es: https://autosortiz.github.io/autos-ortiz-web/
+> URL GitHub Pages: https://autosortiz.github.io/autos-ortiz-web/
+> Dominio personalizado: http://ortizautomotriz.com/ (HTTPS pendiente)
 
 ## Datos reales
 
@@ -34,3 +36,8 @@ Para usar datos reales del inventario, edita ese array o conecta a una API/ERP.
 
 © 2025 Autos Ortiz — Todos los derechos reservados
 Desarrollado por CeluCenter MX
+
+## Docs completas
+
+📄 El doc detallado del proyecto (estructura, backend, flujo, etc.) está en:
+`~/.openclaw/workspace/autos-ortiz-info.html`
