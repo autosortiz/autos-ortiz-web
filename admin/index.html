@@ -122,6 +122,9 @@
       transition: transform 0.15s, border-color 0.15s;
     }
     .car-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .car-thumb-wrap {
+      position: relative;
+    }
     .car-thumb {
       width: 100%;
       height: 160px;
@@ -134,13 +137,33 @@
     .car-price { font-size: 20px; font-weight: 800; color: var(--green); margin: 8px 0 4px; }
     .car-price-old { font-size: 13px; color: var(--muted); text-decoration: line-through; }
     .car-badge {
-      display: inline-block;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      z-index: 5;
       background: var(--accent);
       color: #fff;
       font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 20px;
-      margin-bottom: 8px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .car-destacado {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      z-index: 5;
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
     }
     .car-id { font-size: 11px; color: var(--muted); margin-top: 10px; }
     .car-actions {
@@ -531,10 +554,13 @@ function renderCards(autos) {
   }
   grid.innerHTML = autos.map(auto => `
     <div class="car-card">
-      <img class="car-thumb" src="${imgUrl(auto.imagen)}" alt="${auto.marca} ${auto.modelo}"
-           onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80'" />
-      <div class="car-body">
+      <div class="car-thumb-wrap">
         ${auto.badge ? `<span class="car-badge">${auto.badge}</span>` : ''}
+        ${auto.tag === 'gold' ? '<span class="car-destacado">⭐ Destacado</span>' : ''}
+        <img class="car-thumb" src="${imgUrl(auto.imagen)}" alt="${auto.marca} ${auto.modelo}"
+             onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80'" />
+      </div>
+      <div class="car-body">
         <div class="car-brand">${auto.marca}</div>
         <div class="car-model">${auto.modelo} ${auto.año}</div>
         ${auto.version ? `<div style="font-size:12px;color:var(--muted)">${auto.version}</div>` : ''}
@@ -542,7 +568,6 @@ function renderCards(autos) {
           ? `<div class="car-price-old">${fmt(auto.precioAntes)}</div><div class="car-price">${fmt(auto.precioAhora)}</div>`
           : `<div class="car-price">${fmt(auto.precioAhora)}</div>`}
         ${auto.tag === 'new' ? '<span style="font-size:11px;color:#3498db">🏷️ Nuevo</span>' : ''}
-        ${auto.tag === 'gold' ? '<span style="font-size:11px;color:#f39c12">⭐ Destacado</span>' : ''}
         ${auto.tag === 'vendido' ? '<span style="font-size:11px;color:#e63946">✓ Vendido</span>' : ''}
         <div class="car-id">#${auto.id}</div>
         <div class="car-actions">
@@ -579,10 +604,13 @@ function renderCards(autos) {
   }
   grid.innerHTML = visible.map(auto => `
     <div class="car-card">
-      <img class="car-thumb" src="${imgUrl(auto.imagen)}" alt="${auto.marca} ${auto.modelo}"
-           onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80'" />
-      <div class="car-body">
+      <div class="car-thumb-wrap">
         ${auto.badge ? `<span class="car-badge">${auto.badge}</span>` : ''}
+        ${auto.tag === 'gold' ? '<span class="car-destacado">⭐ Destacado</span>' : ''}
+        <img class="car-thumb" src="${imgUrl(auto.imagen)}" alt="${auto.marca} ${auto.modelo}"
+             onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80'" />
+      </div>
+      <div class="car-body">
         <div class="car-brand">${auto.marca}</div>
         <div class="car-model">${auto.modelo} ${auto.año}</div>
         ${auto.version ? `<div style="font-size:12px;color:var(--muted)">${auto.version}</div>` : ''}
@@ -590,7 +618,6 @@ function renderCards(autos) {
           ? `<div class="car-price-old">${fmt(auto.precioAntes)}</div><div class="car-price">${fmt(auto.precioAhora)}</div>`
           : `<div class="car-price">${fmt(auto.precioAhora)}</div>`}
         ${auto.tag === 'new' ? '<span style="font-size:11px;color:#3498db">🏷️ Nuevo</span>' : ''}
-        ${auto.tag === 'gold' ? '<span style="font-size:11px;color:#f39c12">⭐ Destacado</span>' : ''}
         ${auto.tag === 'vendido' ? '<span style="font-size:11px;color:#e63946">✓ Vendido</span>' : ''}
         <div class="car-id">#${auto.id}</div>
         <div class="car-actions">
