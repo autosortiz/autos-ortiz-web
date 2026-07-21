@@ -21,7 +21,7 @@
       "img/autos/kia-sportage-2018/kia-sportage-2018-07.jpeg"
     ],
     "badge": "Excelentes conciciones",
-    "tag": "gold"
+    "tag": "en-venta"
   },
   {
     "id": 98,
@@ -46,7 +46,7 @@
       "img/autos/honda-crv-2014/honda-crv-2014-08.jpeg"
     ],
     "badge": "Para toda la Familia",
-    "tag": "new"
+    "tag": "en-venta"
   },
   {
     "id": 97,
@@ -91,7 +91,7 @@
       "img/autos/nissan-xtrail-2017/nissan-xtrail-2017-05.jpeg"
     ],
     "badge": "Economizador",
-    "tag": ""
+    "tag": "en-venta"
   },
   {
     "id": 95,
@@ -112,6 +112,6 @@
       "img/autos/nissan-versa-2023/nissan-versa-2023-04.jpeg"
     ],
     "badge": "Deportivo",
-    "tag": ""
+    "tag": "en-venta"
   }
 ]

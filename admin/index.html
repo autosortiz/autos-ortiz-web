@@ -381,11 +381,9 @@
   <div class="stats-bar">
     Total de autos: <span id="statTotal">0</span>
     &nbsp;|&nbsp;
-    <span id="statNew">0</span> nuevos
+    En venta: <span id="statEnVenta">0</span>
     &nbsp;|&nbsp;
-    <span id="statFeatured">0</span> destacados
-    &nbsp;|&nbsp;
-    <span id="statSold">0</span> vendidos
+    Vendidos: <span id="statSold">0</span>
   </div>
 
   <div class="toolbar">
@@ -464,12 +462,8 @@
           <div class="form-group full">
             <label>Tag</label>
             <div class="tag-select">
-              <input type="radio" name="fTag" id="tagEmpty" value="" checked />
-              <label for="tagEmpty">Normal</label>
-              <input type="radio" name="fTag" id="tagNew" value="new" />
-              <label for="tagNew">Nuevo</label>
-              <input type="radio" name="fTag" id="tagGold" value="gold" />
-              <label for="tagGold">Destacado</label>
+              <input type="radio" name="fTag" id="tagEnVenta" value="en-venta" checked />
+              <label for="tagEnVenta">En venta</label>
               <input type="radio" name="fTag" id="tagSold" value="vendido" />
               <label for="tagSold">Vendido</label>
             </div>
@@ -556,7 +550,7 @@ function renderCards(autos) {
     <div class="car-card">
       <div class="car-thumb-wrap">
         ${auto.badge ? `<span class="car-badge">${auto.badge}</span>` : ''}
-        ${auto.tag === 'gold' ? '<span class="car-destacado">⭐ Destacado</span>' : ''}
+        ${auto.tag === 'vendido' ? '<span class="car-destacado">✓ Vendido</span>' : ''}
         <img class="car-thumb" src="${imgUrl(auto.imagen)}" alt="${auto.marca} ${auto.modelo}"
              onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80'" />
       </div>
@@ -567,7 +561,7 @@ function renderCards(autos) {
         ${auto.precioAntes > 0
           ? `<div class="car-price-old">${fmt(auto.precioAntes)}</div><div class="car-price">${fmt(auto.precioAhora)}</div>`
           : `<div class="car-price">${fmt(auto.precioAhora)}</div>`}
-        ${auto.tag === 'new' ? '<span style="font-size:11px;color:#3498db">🏷️ Nuevo</span>' : ''}
+        
         ${auto.tag === 'vendido' ? '<span style="font-size:11px;color:#e63946">✓ Vendido</span>' : ''}
         <div class="car-id">#${auto.id}</div>
         <div class="car-actions">
@@ -580,8 +574,7 @@ function renderCards(autos) {
 
 function updateStats() {
   document.getElementById('statTotal').textContent = allAutos.length;
-  document.getElementById('statNew').textContent = allAutos.filter(a => a.tag === 'new').length;
-  document.getElementById('statFeatured').textContent = allAutos.filter(a => a.tag === 'gold').length;
+  document.getElementById('statEnVenta').textContent = allAutos.filter(a => a.tag === 'en-venta' || !a.tag).length;
   document.getElementById('statSold').textContent = allAutos.filter(a => a.tag === 'vendido').length;
 }
 
@@ -606,7 +599,7 @@ function renderCards(autos) {
     <div class="car-card">
       <div class="car-thumb-wrap">
         ${auto.badge ? `<span class="car-badge">${auto.badge}</span>` : ''}
-        ${auto.tag === 'gold' ? '<span class="car-destacado">⭐ Destacado</span>' : ''}
+        ${auto.tag === 'vendido' ? '<span class="car-destacado">✓ Vendido</span>' : ''}
         <img class="car-thumb" src="${imgUrl(auto.imagen)}" alt="${auto.marca} ${auto.modelo}"
              onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80'" />
       </div>
@@ -617,7 +610,7 @@ function renderCards(autos) {
         ${auto.precioAntes > 0
           ? `<div class="car-price-old">${fmt(auto.precioAntes)}</div><div class="car-price">${fmt(auto.precioAhora)}</div>`
           : `<div class="car-price">${fmt(auto.precioAhora)}</div>`}
-        ${auto.tag === 'new' ? '<span style="font-size:11px;color:#3498db">🏷️ Nuevo</span>' : ''}
+        
         ${auto.tag === 'vendido' ? '<span style="font-size:11px;color:#e63946">✓ Vendido</span>' : ''}
         <div class="car-id">#${auto.id}</div>
         <div class="car-actions">
@@ -667,7 +660,7 @@ function openEditModal(id) {
   document.querySelectorAll('input[name="fTag"]').forEach(r => r.checked = false);
   const tagRadio = document.querySelector(`input[name="fTag"][value="${auto.tag || ''}"]`);
   if (tagRadio) tagRadio.checked = true;
-  else document.getElementById('tagEmpty').checked = true;
+  else document.getElementById('tagEnVenta').checked = true;
 
   // preview
   document.getElementById('imgPreview').innerHTML = auto.imagen
