@@ -1,5 +1,29 @@
 [
   {
+    "id": 100,
+    "marca": "Nissan",
+    "modelo": "Kicks",
+    "año": 2018,
+    "version": "Exclusive",
+    "km": "95000",
+    "combustible": "Gasolina",
+    "transmision": "Automática",
+    "precioAntes": 265000,
+    "precioAhora": 245000,
+    "imagen": "img/autos/14855-1784729700546/foto-01.jpg",
+    "imagenes": [
+      "img/autos/14855-1784729700546/foto-01.jpg",
+      "img/autos/14852-1784729714701/foto-02.jpg",
+      "img/autos/14854-1784729714704/foto-03.jpg",
+      "img/autos/14853-1784729714705/foto-04.jpg",
+      "img/autos/14856-1784729714705/foto-05.jpg",
+      "img/autos/14858-1784729714705/foto-06.jpg",
+      "img/autos/14857-1784729714705/foto-07.jpg"
+    ],
+    "badge": "Impecable",
+    "tag": "en-venta"
+  },
+  {
     "id": 99,
     "marca": "Kia",
     "modelo": "Sportage",
