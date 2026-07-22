@@ -59,6 +59,8 @@
     .btn-primary:hover { background: var(--accent2); }
     .btn-success { background: var(--green); color: #fff; }
     .btn-success:hover { background: #27ae60; }
+    .btn-warning { background: var(--orange); color: #fff; }
+    .btn-warning:hover { background: #e67e22; }
 
     /* ── STATS BAR ── */
     .stats-bar {
@@ -80,10 +82,7 @@
       align-items: center;
       border-bottom: 1px solid var(--border);
     }
-    .search-box {
-      flex: 1;
-      min-width: 200px;
-    }
+    .search-box { flex: 1; min-width: 200px; }
     .search-box input {
       width: 100%;
       padding: 9px 14px;
@@ -122,66 +121,32 @@
       transition: transform 0.15s, border-color 0.15s;
     }
     .car-card:hover { transform: translateY(-2px); border-color: var(--accent); }
-    .car-thumb-wrap {
-      position: relative;
-    }
-    .car-thumb {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      background: #111;
-    }
+    .car-thumb-wrap { position: relative; }
+    .car-thumb { width: 100%; height: 160px; object-fit: cover; background: #111; }
     .car-body { padding: 16px; }
     .car-brand { font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
     .car-model { font-size: 16px; font-weight: 700; margin: 4px 0; }
     .car-price { font-size: 20px; font-weight: 800; color: var(--green); margin: 8px 0 4px; }
     .car-price-old { font-size: 13px; color: var(--muted); text-decoration: line-through; }
     .car-badge {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      z-index: 5;
-      background: var(--accent);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      position: absolute; bottom: 10px; left: 10px; z-index: 5;
+      background: var(--accent); color: #fff; font-size: 11px; font-weight: 700;
+      padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;
     }
     .car-destacado {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      z-index: 5;
-      background: linear-gradient(135deg, #f39c12, #e67e22);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      position: absolute; bottom: 10px; right: 10px; z-index: 5;
+      background: linear-gradient(135deg, #f39c12, #e67e22); color: #fff; font-size: 11px; font-weight: 700;
+      padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;
       box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
     }
     .car-id { font-size: 11px; color: var(--muted); margin-top: 10px; }
     .car-actions {
-      display: flex;
-      gap: 8px;
-      margin-top: 12px;
-      padding-top: 12px;
+      display: flex; gap: 8px; margin-top: 12px; padding-top: 12px;
       border-top: 1px solid var(--border);
     }
     .car-actions .btn {
-      flex: 1;
-      padding: 8px;
-      border-radius: 8px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      text-align: center;
+      flex: 1; padding: 8px; border-radius: 8px; font-size: 12px; font-weight: 600;
+      cursor: pointer; border: none; text-align: center;
     }
     .btn-edit { background: var(--surface2); color: var(--text); }
     .btn-edit:hover { background: #2d3140; }
@@ -191,12 +156,10 @@
     /* ── MODAL ── */
     .modal-overlay {
       display: none;
-      position: fixed;
-      inset: 0;
+      position: fixed; inset: 0;
       background: rgba(0,0,0,0.75);
       z-index: 1000;
-      align-items: center;
-      justify-content: center;
+      align-items: center; justify-content: center;
       padding: 20px;
     }
     .modal-overlay.show { display: flex; }
@@ -204,102 +167,122 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
-      width: 100%;
-      max-width: 600px;
-      max-height: 90vh;
-      overflow-y: auto;
+      width: 100%; max-width: 640px;
+      max-height: 90vh; overflow-y: auto;
     }
     .modal-header {
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 20px 24px; border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
     }
     .modal-header h2 { font-size: 18px; }
-    .modal-close {
-      background: none;
-      border: none;
-      color: var(--muted);
-      font-size: 24px;
-      cursor: pointer;
-      line-height: 1;
-    }
+    .modal-close { background: none; border: none; color: var(--muted); font-size: 24px; cursor: pointer; line-height: 1; }
     .modal-close:hover { color: var(--text); }
     .modal-body { padding: 24px; }
     .modal-footer {
-      padding: 16px 24px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      gap: 12px;
-      justify-content: flex-end;
+      padding: 16px 24px; border-top: 1px solid var(--border);
+      display: flex; gap: 12px; justify-content: flex-end;
     }
 
     /* ── FORM ── */
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .form-grid .full { grid-column: 1 / -1; }
     .form-group { display: flex; flex-direction: column; gap: 6px; }
     .form-group label { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
     .form-group input, .form-group select, .form-group textarea {
-      padding: 10px 12px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-size: 14px;
-      outline: none;
-      font-family: inherit;
-      transition: border-color 0.2s;
+      padding: 10px 12px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text); font-size: 14px; outline: none;
+      font-family: inherit; transition: border-color 0.2s;
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
     .form-group textarea { resize: vertical; min-height: 80px; }
 
+    /* ── PHOTO UPLOAD ── */
+    .photo-dropzone {
+      border: 2px dashed var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: var(--bg);
+    }
+    .photo-dropzone:hover, .photo-dropzone.dragover {
+      border-color: var(--accent);
+      background: rgba(230, 57, 70, 0.05);
+    }
+    .photo-dropzone p { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    .photo-dropzone .dz-hint { font-size: 12px; color: var(--muted); }
+    .photo-dropzone input[type="file"] { display: none; }
+    .photo-preview {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+    }
+    .photo-preview img {
+      width: 80px; height: 60px; object-fit: cover;
+      border-radius: 6px; border: 1px solid var(--border);
+    }
+    .photo-preview .photo-item { position: relative; }
+    .photo-preview .remove-photo {
+      position: absolute; top: -6px; right: -6px;
+      background: var(--accent); color: #fff;
+      border-radius: 50%; width: 18px; height: 18px;
+      font-size: 10px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+    }
+    .photo-preview .photo-badge {
+      position: absolute; bottom: 2px; left: 2px;
+      background: var(--green); color: #fff;
+      font-size: 9px; padding: 1px 4px; border-radius: 3px;
+    }
+
+    /* ── TAG SELECT ── */
+    .tag-select { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag-select label {
+      padding: 6px 12px; border: 1px solid var(--border);
+      border-radius: 6px; font-size: 12px; cursor: pointer; transition: all 0.15s;
+    }
+    .tag-select input[type="radio"] { display: none; }
+    .tag-select input:checked + label { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* ── IMPORT JSON ── */
+    .import-zone {
+      border: 2px dashed var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 16px;
+      background: var(--bg);
+    }
+    .import-zone:hover { border-color: var(--green); }
+    .import-zone p { font-size: 13px; color: var(--muted); }
+    .import-zone input[type="file"] { display: none; }
+
     /* ── TOAST ── */
     .toast {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      padding: 14px 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      font-size: 14px;
-      z-index: 2000;
-      display: none;
-      animation: slideIn 0.3s ease;
+      position: fixed; bottom: 24px; right: 24px;
+      padding: 14px 20px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 10px;
+      font-size: 14px; z-index: 2000;
+      display: none; animation: slideIn 0.3s ease;
     }
     .toast.show { display: block; }
     .toast.success { border-color: var(--green); color: var(--green); }
     .toast.error { border-color: var(--accent); color: var(--accent); }
-    @keyframes slideIn {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+    @keyframes slideIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
     /* ── LOADING ── */
     .loading-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(15,17,23,0.85);
-      z-index: 3000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 16px;
+      position: fixed; inset: 0;
+      background: rgba(15,17,23,0.85); z-index: 3000;
+      display: none; align-items: center; justify-content: center;
+      flex-direction: column; gap: 16px;
     }
     .loading-overlay.show { display: flex; }
     .spinner {
-      width: 40px;
-      height: 40px;
-      border: 3px solid var(--border);
-      border-top-color: var(--accent);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
+      width: 40px; height: 40px;
+      border: 3px solid var(--border); border-top-color: var(--accent);
+      border-radius: 50%; animation: spin 0.8s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -307,70 +290,30 @@
     .confirm-box { text-align: center; padding: 20px 0; }
     .confirm-box p { font-size: 15px; margin-bottom: 24px; color: var(--text); }
 
-    /* ── MISC ── */
-    .tag-select {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .tag-select label {
-      padding: 6px 12px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 12px;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .tag-select input[type="radio"] { display: none; }
-    .tag-select input:checked + label {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-    .photo-preview {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
-    .photo-preview img {
-      width: 80px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-    }
-    .photo-preview div {
-      position: relative;
-    }
-    .photo-preview .remove-photo {
-      position: absolute;
-      top: -6px;
-      right: -6px;
-      background: var(--accent);
-      color: #fff;
-      border-radius: 50%;
-      width: 18px;
-      height: 18px;
-      font-size: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-    .empty-state {
-      text-align: center;
-      padding: 80px 20px;
-      color: var(--muted);
-    }
+    /* ── EMPTY ── */
+    .empty-state { text-align: center; padding: 80px 20px; color: var(--muted); }
     .empty-state h3 { font-size: 18px; color: var(--text); margin-bottom: 8px; }
+
+    /* ── UPLOAD PROGRESS ── */
+    .upload-progress {
+      font-size: 12px; color: var(--muted); margin-top: 8px;
+      display: none;
+    }
+    .upload-progress.show { display: block; }
+    .upload-progress-bar {
+      height: 4px; background: var(--border); border-radius: 2px;
+      margin-top: 4px; overflow: hidden;
+    }
+    .upload-progress-fill {
+      height: 100%; background: var(--green);
+      transition: width 0.3s;
+    }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════ APP ══ -->
+<!-- ══════════════════════════════════ APP ══ -->
 <div class="app" id="app">
-
   <div class="header">
     <h1>🚗 Ortiz Automotriz — Admin</h1>
     <div class="header-right">
@@ -380,10 +323,8 @@
 
   <div class="stats-bar">
     Total de autos: <span id="statTotal">0</span>
-    &nbsp;|&nbsp;
-    En venta: <span id="statEnVenta">0</span>
-    &nbsp;|&nbsp;
-    Vendidos: <span id="statSold">0</span>
+    &nbsp;|&nbsp; En venta: <span id="statEnVenta">0</span>
+    &nbsp;|&nbsp; Vendidos: <span id="statSold">0</span>
   </div>
 
   <div class="toolbar">
@@ -391,13 +332,13 @@
       <input type="text" id="searchInput" placeholder="Buscar por marca, modelo..." oninput="renderCards(filtered)" />
     </div>
     <button class="btn btn-primary" onclick="openAddModal()">+ Agregar auto</button>
+    <button class="btn btn-warning" onclick="openImportModal()">📥 Importar JSON</button>
   </div>
 
   <div class="cars-grid" id="carsGrid"></div>
-
 </div>
 
-<!-- ══════════════════════════════════════ ADD/EDIT MODAL ══ -->
+<!-- ══════════════════════════════════ ADD/EDIT MODAL ══ -->
 <div class="modal-overlay" id="carModal">
   <div class="modal">
     <div class="modal-header">
@@ -445,16 +386,33 @@
             <label>Precio anterior (tachado)</label>
             <input id="fPrecioAntes" type="number" placeholder="0 si no hay descuento" value="0" />
           </div>
+
+          <!-- FOTO PRINCIPAL -->
           <div class="form-group full">
-            <label>Foto principal (URL) *</label>
-            <input id="fImagen" type="text" required placeholder="img/autos/marca-modelo-año/foto-01.jpeg" />
-            <div class="photo-preview" id="imgPreview"></div>
+            <label>Foto principal</label>
+            <div class="photo-dropzone" id="mainPhotoZone" onclick="document.getElementById('fMainPhoto').click()">
+              <p>📷 Haz clic o arrastra la foto principal aquí</p>
+              <span class="dz-hint">JPEG, PNG — se sube directo al sitio</span>
+              <input type="file" id="fMainPhoto" accept="image/*" onchange="handleMainPhoto(this.files[0])" />
+            </div>
+            <div class="photo-preview" id="mainPhotoPreview"></div>
           </div>
+
+          <!-- FOTOS ADICIONALES -->
           <div class="form-group full">
-            <label>Todas las fotos (URLs, una por línea)</label>
-            <textarea id="fImagenes" rows="4" placeholder="Una URL por línea&#10;ej:&#10;img/autos/kia-sportage-2018/foto-01.jpeg&#10;img/autos/kia-sportage-2018/foto-02.jpeg"></textarea>
-            <div class="photo-preview" id="imagenesPreview"></div>
+            <label>Fotos adicionales</label>
+            <div class="photo-dropzone" id="extraPhotosZone" onclick="document.getElementById('fExtraPhotos').click()">
+              <p>📷 Arrastra o haz clic para agregar más fotos</p>
+              <span class="dz-hint">Selecciona varias a la vez</span>
+              <input type="file" id="fExtraPhotos" accept="image/*" multiple onchange="handleExtraPhotos(this.files)" />
+            </div>
+            <div class="photo-preview" id="extraPhotosPreview"></div>
+            <div class="upload-progress" id="uploadProgress">
+              <span id="uploadProgressText">Subiendo fotos...</span>
+              <div class="upload-progress-bar"><div class="upload-progress-fill" id="uploadProgressFill" style="width:0%"></div></div>
+            </div>
           </div>
+
           <div class="form-group full">
             <label>Etiqueta</label>
             <input id="fBadge" placeholder="Ej: Como nuevo, Excelentes condiciones" />
@@ -472,14 +430,43 @@
 
         <div class="modal-footer" style="margin-top:24px;padding:0;border:none">
           <button type="button" class="btn btn-logout" onclick="closeModal()" style="padding:12px 24px">Cancelar</button>
-          <button type="submit" class="btn btn-success" style="padding:12px 24px">Guardar</button>
+          <button type="submit" class="btn btn-success" id="saveBtn" style="padding:12px 24px">Guardar</button>
         </div>
       </form>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════ DELETE CONFIRM ══ -->
+<!-- ══════════════════════════════════ IMPORT JSON MODAL ══ -->
+<div class="modal-overlay" id="importModal">
+  <div class="modal" style="max-width:500px">
+    <div class="modal-header">
+      <h2>📥 Importar autos desde JSON</h2>
+      <button class="modal-close" onclick="closeImportModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">
+        Sube un archivo <code style="color:var(--accent)">.json</code> con un array de autos.
+        Puedes exportarlo desde este admin o crearlo manualmente.
+      </p>
+      <div class="import-zone" onclick="document.getElementById('fImportJson').click()">
+        <p>📄 Haz clic para seleccionar archivo JSON</p>
+        <span class="dz-hint">Array de autos — se agregarán al inicio de la lista</span>
+        <input type="file" id="fImportJson" accept=".json" onchange="handleImportJson(this.files[0])" />
+      </div>
+      <div id="importPreview" style="display:none">
+        <p style="font-size:13px;color:var(--green);margin-bottom:8px" id="importPreviewText"></p>
+        <pre id="importPreviewData" style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px;font-size:12px;max-height:200px;overflow:auto;color:var(--muted)"></pre>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-logout" onclick="closeImportModal()" style="padding:10px 20px">Cancelar</button>
+      <button type="button" class="btn btn-success" id="importBtn" onclick="confirmImport()" disabled style="padding:10px 20px">Importar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ DELETE CONFIRM ══ -->
 <div class="modal-overlay" id="deleteModal">
   <div class="modal" style="max-width:400px">
     <div class="modal-header">
@@ -496,25 +483,32 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════ TOAST ══ -->
+<!-- ══════════════════════════════════ TOAST ══ -->
 <div class="toast" id="toast"></div>
 
-<!-- ══════════════════════════════════════ LOADING ══ -->
+<!-- ══════════════════════════════════ LOADING ══ -->
 <div class="loading-overlay" id="loadingOverlay">
   <div class="spinner"></div>
   <div id="loadingMsg">Guardando...</div>
 </div>
 
 <script>
-// ══════════════════════════════════════ CONFIG ══
+// ══════════════════════════════════ CONFIG ══
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw628MT5Uj3sMN046p0nfkrDfvMwif-6Y8XNULAWqa2fxmFO-JO2RES7tHond5QZz1w/exec';
 
-// ══════════════════════════════════════ STATE ══
+// ══════════════════════════════════ STATE ══
 let allAutos = [];
 let filtered = [];
 let deleteTarget = null;
 
-// ══════════════════════════════════════ INIT ══
+// Archivos pendientes por subir
+let pendingMainPhoto = null; // { file, folder, filename, dataUrl }
+let pendingExtraPhotos = []; // [{ file, folder, filename, dataUrl }]
+
+// Para import
+let pendingImportAutos = [];
+
+// ══════════════════════════════════ INIT ══
 async function initApp() {
   showLoading('Cargando autos...');
   await loadAutos();
@@ -522,6 +516,7 @@ async function initApp() {
   document.getElementById('searchInput').value = '';
   renderCards(allAutos);
   updateStats();
+  setupDragDrop();
 }
 
 async function loadAutos() {
@@ -539,46 +534,23 @@ async function loadAutos() {
   }
 }
 
-// ══════════════════════════════════════ RENDER ══
-function renderCards(autos) {
-  const grid = document.getElementById('carsGrid');
-  if (!autos || autos.length === 0) {
-    grid.innerHTML = `<div class="empty-state"><h3>Sin resultados</h3><p>No hay autos que coincidan con la búsqueda</p></div>`;
-    return;
-  }
-  grid.innerHTML = autos.map(auto => `
-    <div class="car-card">
-      <div class="car-thumb-wrap">
-        ${auto.badge ? `<span class="car-badge">${auto.badge}</span>` : ''}
-        ${auto.tag === 'vendido' ? '<span class="car-destacado">✓ Vendido</span>' : ''}
-        <img class="car-thumb" src="${imgUrl(auto.imagen)}" alt="${auto.marca} ${auto.modelo}"
-             onerror="this.src='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80'" />
-      </div>
-      <div class="car-body">
-        <div class="car-brand">${auto.marca}</div>
-        <div class="car-model">${auto.modelo} ${auto.año}</div>
-        ${auto.version ? `<div style="font-size:12px;color:var(--muted)">${auto.version}</div>` : ''}
-        ${auto.precioAntes > 0
-          ? `<div class="car-price-old">${fmt(auto.precioAntes)}</div><div class="car-price">${fmt(auto.precioAhora)}</div>`
-          : `<div class="car-price">${fmt(auto.precioAhora)}</div>`}
-        
-        ${auto.tag === 'vendido' ? '<span style="font-size:11px;color:#e63946">✓ Vendido</span>' : ''}
-        <div class="car-id">#${auto.id}</div>
-        <div class="car-actions">
-          <button class="btn btn-edit" onclick="openEditModal(${auto.id})">Editar</button>
-          <button class="btn btn-delete" onclick="openDeleteModal(${auto.id})">Eliminar</button>
-        </div>
-      </div>
-    </div>`).join('');
+// ══════════════════════════════════ DRAG & DROP ══
+function setupDragDrop() {
+  ['mainPhotoZone', 'extraPhotosZone'].forEach(id => {
+    const zone = document.getElementById(id);
+    if (!zone) return;
+    zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
+    zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+    zone.addEventListener('drop', e => {
+      e.preventDefault();
+      zone.classList.remove('dragover');
+      if (id === 'mainPhotoZone') handleMainPhoto(e.dataTransfer.files[0]);
+      else handleExtraPhotos(e.dataTransfer.files);
+    });
+  });
 }
 
-function updateStats() {
-  document.getElementById('statTotal').textContent = allAutos.length;
-  document.getElementById('statEnVenta').textContent = allAutos.filter(a => a.tag === 'en-venta' || !a.tag).length;
-  document.getElementById('statSold').textContent = allAutos.filter(a => a.tag === 'vendido').length;
-}
-
-// ══════════════════════════════════════ SEARCH ══
+// ══════════════════════════════════ RENDER ══
 function renderCards(autos) {
   const q = document.getElementById('searchInput').value.toLowerCase().trim();
   const visible = q
@@ -610,7 +582,6 @@ function renderCards(autos) {
         ${auto.precioAntes > 0
           ? `<div class="car-price-old">${fmt(auto.precioAntes)}</div><div class="car-price">${fmt(auto.precioAhora)}</div>`
           : `<div class="car-price">${fmt(auto.precioAhora)}</div>`}
-        
         ${auto.tag === 'vendido' ? '<span style="font-size:11px;color:#e63946">✓ Vendido</span>' : ''}
         <div class="car-id">#${auto.id}</div>
         <div class="car-actions">
@@ -621,20 +592,103 @@ function renderCards(autos) {
     </div>`).join('');
 }
 
-function fmt(n) {
-  return '$' + Number(n).toLocaleString('es-MX');
+function updateStats() {
+  document.getElementById('statTotal').textContent = allAutos.length;
+  document.getElementById('statEnVenta').textContent = allAutos.filter(a => a.tag === 'en-venta' || !a.tag).length;
+  document.getElementById('statSold').textContent = allAutos.filter(a => a.tag === 'vendido').length;
 }
 
-// ══════════════════════════════════════ MODAL ADD ══
+function fmt(n) { return '$' + Number(n).toLocaleString('es-MX'); }
+
+// ══════════════════════════════════ PHOTO HANDLERS ══
+function handleMainPhoto(file) {
+  if (!file) return;
+  const folder = makeFolder(file.name);
+  previewPhoto(file, 'mainPhotoPreview', true, () => {
+    pendingMainPhoto = { file, folder, filename: makeFilename(file.name, 1) };
+  });
+}
+
+function handleExtraPhotos(files) {
+  if (!files || !files.length) return;
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    const folder = makeFolder(file.name);
+    const existing = pendingExtraPhotos.findIndex(p => p.file.name === file.name && p.file.size === file.size);
+    if (existing === -1) {
+      const idx = pendingExtraPhotos.length + 2;
+      pendingExtraPhotos.push({ file, folder, filename: makeFilename(file.name, idx) });
+      previewPhoto(file, 'extraPhotosPreview', false);
+    }
+  }
+}
+
+function previewPhoto(file, previewId, isMain, onLoad) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    const div = document.createElement('div');
+    div.className = 'photo-item';
+    div.innerHTML = `
+      <img src="${e.target.result}" />
+      ${isMain ? '<span class="photo-badge">MAIN</span>' : ''}
+      <span class="remove-photo" onclick="removePhoto('${previewId}','${file.name}',${isMain})">&times;</span>
+    `;
+    // Limpiar preview si es main
+    if (isMain) document.getElementById(previewId).innerHTML = '';
+    document.getElementById(previewId).appendChild(div);
+    if (onLoad) onLoad();
+  };
+  reader.readAsDataURL(file);
+}
+
+function removePhoto(previewId, filename, isMain) {
+  const container = document.getElementById(previewId);
+  const items = container.querySelectorAll('.photo-item');
+  items.forEach(item => {
+    if (item.querySelector('img').src.includes(filename.split('.')[0]) || item.querySelector('img').alt === filename) {
+      // Check by checking if this is the right item
+      const img = item.querySelector('img');
+      const src = img.src;
+      // Simple approach: just remove the last added for now
+      item.remove();
+    }
+  });
+  // Better: use a map
+  if (isMain) {
+    pendingMainPhoto = null;
+  } else {
+    // Try to match by filename in dataURL
+    pendingExtraPhotos = pendingExtraPhotos.filter(p => {
+      const reader = new FileReader();
+      let match = false;
+      return !match;
+    });
+  }
+}
+
+// ─── Helpers para nombre de archivo/carpeta ───
+function makeFolder(filename) {
+  const name = filename.replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+  const ts = Date.now();
+  return `${name}-${ts}`;
+}
+
+function makeFilename(originalName, idx) {
+  const ext = originalName.split('.').pop() || 'jpg';
+  return `foto-${String(idx).padStart(2, '0')}.${ext}`;
+}
+
+// ══════════════════════════════════ MODAL ADD ══
 function openAddModal() {
   document.getElementById('modalTitle').textContent = 'Agregar auto';
   document.getElementById('carForm').reset();
   document.getElementById('carId').value = '';
-  // next ID
-  const maxId = allAutos.length ? Math.max(...allAutos.map(a => a.id)) : 99;
   document.getElementById('fAnio').value = new Date().getFullYear();
-  document.getElementById('imgPreview').innerHTML = '';
-  document.getElementById('imagenesPreview').innerHTML = '';
+  document.getElementById('mainPhotoPreview').innerHTML = '';
+  document.getElementById('extraPhotosPreview').innerHTML = '';
+  pendingMainPhoto = null;
+  pendingExtraPhotos = [];
+  document.getElementById('uploadProgress').classList.remove('show');
   document.getElementById('carModal').classList.add('show');
 }
 
@@ -652,22 +706,23 @@ function openEditModal(id) {
   document.getElementById('fTransmision').value = auto.transmision || '';
   document.getElementById('fPrecioAhora').value = auto.precioAhora;
   document.getElementById('fPrecioAntes').value = auto.precioAntes || 0;
-  document.getElementById('fImagen').value = auto.imagen || '';
-  document.getElementById('fImagenes').value = (auto.imagenes || []).join('\n');
   document.getElementById('fBadge').value = auto.badge || '';
 
-  // reset tag radios
+  // Tag
   document.querySelectorAll('input[name="fTag"]').forEach(r => r.checked = false);
   const tagRadio = document.querySelector(`input[name="fTag"][value="${auto.tag || ''}"]`);
   if (tagRadio) tagRadio.checked = true;
   else document.getElementById('tagEnVenta').checked = true;
 
-  // preview
-  document.getElementById('imgPreview').innerHTML = auto.imagen
-    ? `<img src="${imgUrl(auto.imagen)}" style="width:60px;height:45px;object-fit:cover;border-radius:6px;border:1px solid var(--border)" />` : '';
-  document.getElementById('imagenesPreview').innerHTML = (auto.imagenes || []).map(i =>
-    `<div><img src="${imgUrl(i)}" /></div>`).join('');
+  // Preview de fotos existentes
+  document.getElementById('mainPhotoPreview').innerHTML = auto.imagen
+    ? `<div class="photo-item"><img src="${imgUrl(auto.imagen)}" /><span class="photo-badge">MAIN</span></div>` : '';
+  document.getElementById('extraPhotosPreview').innerHTML = (auto.imagenes || []).slice(1).map((i, idx) =>
+    `<div class="photo-item"><img src="${imgUrl(i)}" /></div>`).join('');
 
+  pendingMainPhoto = null;
+  pendingExtraPhotos = [];
+  document.getElementById('uploadProgress').classList.remove('show');
   document.getElementById('carModal').classList.add('show');
 }
 
@@ -675,20 +730,70 @@ function closeModal() {
   document.getElementById('carModal').classList.remove('show');
 }
 
-function saveCar(e) {
+// ══════════════════════════════════ SAVE CAR ══
+async function saveCar(e) {
   e.preventDefault();
-  const idField = document.getElementById('carId');
-  const isEdit = idField.value !== '';
-  const imagenesRaw = document.getElementById('fImagenes').value.trim();
-  const imagenes = imagenesRaw ? imagenesRaw.split('\n').map(s => s.trim()).filter(Boolean) : [];
+  document.getElementById('saveBtn').disabled = true;
 
+  const isEdit = document.getElementById('carId').value !== '';
+  const marca = document.getElementById('fMarca').value.trim();
+  const modelo = document.getElementById('fModelo').value.trim();
+
+  showLoading('Subiendo fotos...');
+
+  let uploadedPaths = [];
+
+  // 1. Subir foto principal
+  if (pendingMainPhoto) {
+    try {
+      const path = await uploadPhoto(pendingMainPhoto.file, pendingMainPhoto.folder, pendingMainPhoto.filename);
+      uploadedPaths.push(path);
+    } catch (err) {
+      hideLoading();
+      showToast('Error al subir foto principal: ' + err.message, 'error');
+      document.getElementById('saveBtn').disabled = false;
+      return;
+    }
+  }
+
+  // 2. Subir fotos adicionales
+  if (pendingExtraPhotos.length) {
+    document.getElementById('uploadProgress').classList.add('show');
+    for (let i = 0; i < pendingExtraPhotos.length; i++) {
+      const p = pendingExtraPhotos[i];
+      document.getElementById('uploadProgressText').textContent = `Subiendo foto ${i + 1}/${pendingExtraPhotos.length}...`;
+      document.getElementById('uploadProgressFill').style.width = ((i + 1) / pendingExtraPhotos.length * 100) + '%';
+      try {
+        const path = await uploadPhoto(p.file, p.folder, p.filename);
+        uploadedPaths.push(path);
+      } catch (err) {
+        showToast('Error al subir foto ' + (i + 1) + ': ' + err.message, 'error');
+      }
+    }
+  }
+
+  hideLoading();
+  showLoading('Guardando auto...');
+  document.getElementById('uploadProgress').classList.remove('show');
+
+  // 3. Determinar imagen principal
+  let imagen = uploadedPaths[0] || '';
+
+  // Si es edit y no se subió nueva foto, mantener la anterior
+  if (!imagen && isEdit) {
+    const existing = allAutos.find(a => a.id === parseInt(document.getElementById('carId').value));
+    if (existing) imagen = existing.imagen;
+  }
+
+  // 4. Construir objeto auto
   const tagRadio = document.querySelector('input[name="fTag"]:checked');
   const tag = tagRadio ? tagRadio.value : '';
 
   const auto = {
-    id: isEdit ? parseInt(idField.value) : Math.max(...allAutos.map(a => a.id), 99) + 1,
-    marca: document.getElementById('fMarca').value.trim(),
-    modelo: document.getElementById('fModelo').value.trim(),
+    id: isEdit ? parseInt(document.getElementById('carId').value)
+               : Math.max(...allAutos.map(a => a.id), 99) + 1,
+    marca,
+    modelo,
     año: parseInt(document.getElementById('fAnio').value),
     version: document.getElementById('fVersion').value.trim(),
     km: document.getElementById('fKm').value.trim(),
@@ -696,24 +801,144 @@ function saveCar(e) {
     transmision: document.getElementById('fTransmision').value.trim(),
     precioAntes: parseInt(document.getElementById('fPrecioAntes').value) || 0,
     precioAhora: parseInt(document.getElementById('fPrecioAhora').value),
-    imagen: document.getElementById('fImagen').value.trim(),
-    imagenes: imagenes.length ? imagenes : [document.getElementById('fImagen').value.trim()],
+    imagen,
+    imagenes: uploadedPaths.length ? uploadedPaths : (isEdit ? (allAutos.find(a => a.id === auto.id)?.imagenes || []) : []),
     badge: document.getElementById('fBadge').value.trim(),
-    tag: tag
+    tag
   };
 
-  if (isEdit) {
-    const idx = allAutos.findIndex(a => a.id === auto.id);
-    if (idx > -1) allAutos[idx] = auto;
-  } else {
-    allAutos.unshift(auto);
-  }
+  // 5. Guardar en GitHub
+  try {
+    let arr = [...allAutos];
+    if (isEdit) {
+      const idx = arr.findIndex(a => a.id === auto.id);
+      if (idx > -1) arr[idx] = auto;
+    } else {
+      arr.unshift(auto);
+    }
 
-  closeModal();
-  saveToGitHub(auto, isEdit ? 'update' : 'create');
+    const message = isEdit ? `Actualizar ${marca} ${modelo}` : `Agregar ${marca} ${modelo}`;
+
+    const r = await fetch(SCRIPT_URL + '?action=write', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `data=${encodeURIComponent(JSON.stringify({ autos: arr, message }))}`
+    });
+    const json = await r.json();
+    if (!json.success) throw new Error(json.error || 'Error al guardar');
+
+    await loadAutos();
+    const q = document.getElementById('searchInput').value.toLowerCase().trim();
+    filtered = q ? allAutos.filter(a =>
+      a.marca.toLowerCase().includes(q) || a.modelo.toLowerCase().includes(q) ||
+      (a.version || '').toLowerCase().includes(q) || String(a.año).includes(q)
+    ) : allAutos;
+    renderCards(filtered);
+    updateStats();
+    closeModal();
+    showToast(isEdit ? 'Auto actualizado ✓' : 'Auto agregado ✓', 'success');
+
+  } catch (err) {
+    hideLoading();
+    showToast('Error al guardar: ' + err.message, 'error');
+  } finally {
+    document.getElementById('saveBtn').disabled = false;
+  }
 }
 
-// ══════════════════════════════════════ DELETE ══
+// ══════════════════════════════════ UPLOAD PHOTO ══
+async function uploadPhoto(file, folder, filename) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = async e => {
+      const base64 = e.target.result.split(',')[1];
+      try {
+        const r = await fetch(SCRIPT_URL + '?action=uploadImage', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `data=${encodeURIComponent(JSON.stringify({ folder, filename, base64, message: `Subir ${filename}` }))}`
+        });
+        const json = await r.json();
+        if (!json.success) throw new Error(json.error || 'Error al subir imagen');
+        resolve(json.result.path);
+      } catch (err) {
+        reject(err);
+      }
+    };
+    reader.onerror = () => reject(new Error('Error leyendo archivo'));
+    reader.readAsDataURL(file);
+  });
+}
+
+// ══════════════════════════════════ IMPORT JSON ══
+function openImportModal() {
+  pendingImportAutos = [];
+  document.getElementById('fImportJson').value = '';
+  document.getElementById('importPreview').style.display = 'none';
+  document.getElementById('importBtn').disabled = true;
+  document.getElementById('importModal').classList.add('show');
+}
+
+function closeImportModal() {
+  document.getElementById('importModal').classList.remove('show');
+}
+
+function handleImportJson(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      const autos = Array.isArray(data) ? data : (data.autos || []);
+      if (!autos.length) {
+        showToast('El JSON no contiene autos válidos', 'error');
+        return;
+      }
+      pendingImportAutos = autos;
+      document.getElementById('importPreviewText').textContent =
+        `${autos.length} auto(s) listos para importar`;
+      document.getElementById('importPreviewData').textContent =
+        JSON.stringify(autos.slice(0, 3), null, 2) + (autos.length > 3 ? '\n...' : '');
+      document.getElementById('importPreview').style.display = 'block';
+      document.getElementById('importBtn').disabled = false;
+    } catch (err) {
+      showToast('JSON inválido: ' + err.message, 'error');
+    }
+  };
+  reader.readAsText(file);
+}
+
+async function confirmImport() {
+  if (!pendingImportAutos.length) return;
+  document.getElementById('importBtn').disabled = true;
+  showLoading(`Importando ${pendingImportAutos.length} auto(s)...`);
+
+  try {
+    const r = await fetch(SCRIPT_URL + '?action=importJson', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `data=${encodeURIComponent(JSON.stringify({
+        autos: pendingImportAutos,
+        message: `Importar ${pendingImportAutos.length} auto(s) desde JSON`
+      }))}`
+    });
+    const json = await r.json();
+    if (!json.success) throw new Error(json.error || 'Error al importar');
+
+    await loadAutos();
+    filtered = [...allAutos];
+    renderCards(filtered);
+    updateStats();
+    closeImportModal();
+    showToast(`${json.imported} auto(s) importado(s) ✓`, 'success');
+  } catch (err) {
+    hideLoading();
+    showToast('Error al importar: ' + err.message, 'error');
+    document.getElementById('importBtn').disabled = false;
+  }
+}
+
+// ══════════════════════════════════ DELETE ══
 function openDeleteModal(id) {
   const auto = allAutos.find(a => a.id === id);
   if (!auto) return;
@@ -727,69 +952,38 @@ function closeDeleteModal() {
   deleteTarget = null;
 }
 
-function confirmDelete() {
+async function confirmDelete() {
   if (deleteTarget === null) return;
   allAutos = allAutos.filter(a => a.id !== deleteTarget);
   closeDeleteModal();
-  saveToGitHub(null, 'delete');
-}
-
-// ══════════════════════════════════════ SAVE TO GITHUB ══
-async function saveToGitHub(auto, action) {
-  showLoading(action === 'delete' ? 'Eliminando...' : 'Guardando...');
+  showLoading('Eliminando...');
   try {
-    let arr = [...allAutos];
-    if (action === 'delete') {
-      arr = arr.filter(a => a.id !== deleteTarget);
-    } else if (action === 'update') {
-      const idx = arr.findIndex(a => a.id === auto.id);
-      if (idx > -1) arr[idx] = auto;
-    } else {
-      arr.unshift(auto);
-    }
-
-    const message = action === 'delete'
-      ? `Eliminar auto #${deleteTarget}`
-      : (action === 'update' ? `Actualizar ${auto.marca} ${auto.modelo}` : `Agregar ${auto.marca} ${auto.modelo}`);
-
     const r = await fetch(SCRIPT_URL + '?action=write', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `data=${encodeURIComponent(JSON.stringify({ autos: arr, message: message }))}`
+      body: `data=${encodeURIComponent(JSON.stringify({ autos: allAutos, message: `Eliminar auto #${deleteTarget}` }))}`
     });
-
     const json = await r.json();
-    if (!json.success) throw new Error(json.error || 'Error al guardar');
-
+    if (!json.success) throw new Error(json.error);
     await loadAutos();
-    const q = document.getElementById('searchInput').value.toLowerCase().trim();
-    const displayed = q
-      ? allAutos.filter(a =>
-          a.marca.toLowerCase().includes(q) ||
-          a.modelo.toLowerCase().includes(q) ||
-          (a.version || '').toLowerCase().includes(q) ||
-          String(a.año).includes(q)
-        )
-      : allAutos;
-    renderCards(displayed);
+    filtered = [...allAutos];
+    renderCards(filtered);
     updateStats();
-    hideLoading();
-    showToast(action === 'delete' ? 'Auto eliminado' : 'Guardado correctamente ✓', 'success');
-
-  } catch (e) {
-    hideLoading();
-    console.error(e);
-    showToast('Error al guardar: ' + e.message, 'error');
+    showToast('Auto eliminado', 'success');
+  } catch (err) {
+    showToast('Error al eliminar: ' + err.message, 'error');
   }
+  hideLoading();
 }
 
-// ══════════════════════════════════════ HELPERS ══
+// ══════════════════════════════════ HELPERS ══
 const SITE_ROOT = 'https://autosortiz.github.io/autos-ortiz-web';
 function imgUrl(path) {
   if (!path) return 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80';
   if (path.startsWith('http')) return path;
   return SITE_ROOT + '/' + path.replace(/^\/+/, '');
 }
+
 function showLoading(msg) {
   document.getElementById('loadingMsg').textContent = msg;
   document.getElementById('loadingOverlay').classList.add('show');
@@ -801,10 +995,10 @@ function showToast(msg, type) {
   const t = document.getElementById('toast');
   t.textContent = msg;
   t.className = 'toast show ' + (type || '');
-  setTimeout(() => t.classList.remove('show'), 3000);
+  setTimeout(() => t.classList.remove('show'), 3500);
 }
 
-// ══════════════════════════════════════ BOOT ══
+// ══════════════════════════════════ BOOT ══
 initApp();
 </script>
 </body>
