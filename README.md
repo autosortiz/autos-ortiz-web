@@ -1,9 +1,9 @@
-# Autos Ortiz
+# Ortiz Automotriz
 
 Página web de exhibición y venta de vehículos seminuevos verificados.
 
 🌐 **Demo live:** https://autosortiz.github.io/autos-ortiz-web/
-🌍 **Dominio personalizado:** http://ortizautomotriz.com/
+🌍 **Dominio personalizado:** https://ortizautomotriz.com/
 
 ## Características
 
@@ -18,26 +18,46 @@ Página web de exhibición y venta de vehículos seminuevos verificados.
 - HTML5 + CSS3 + JavaScript vanilla
 - Sin dependencias ni frameworks
 - Google Fonts (Montserrat + Inter)
-- Imágenes via Unsplash (placeholder)
+- **Backend:** Google Apps Script + GitHub API
+- **Admin:** Panel de gestión con upload de fotos y CRUD completo
 
-## Para publicar cambios
+## Admin Panel
+
+🔗 **https://autosortiz.github.io/autos-ortiz-web/admin/**
+
+Funciones del admin:
+- ➕ Agregar / Editar / Eliminar autos
+- 📷 Upload de fotos directo al repo (arrastrar o clic)
+- 📥 Importar varios autos desde archivo JSON
+- 🔍 Buscador en tiempo real
+- 📊 Estadísticas del inventario
+
+## Backend
+
+- **Apps Script:** Gestiona el archivo `autos.json` en el repo via GitHub API
+- **Token:** GitHub PAT (classic) con acceso `repo`
+- **Acciones:** `read`, `write`, `uploadImage`, `importJson`
+
+## Publicar cambios
 
 Los cambios se publican automáticamente via **GitHub Pages** desde la branch `main`.
 
 > URL GitHub Pages: https://autosortiz.github.io/autos-ortiz-web/
-> Dominio personalizado: http://ortizautomotriz.com/ (HTTPS pendiente)
+> Dominio personalizado: https://ortizautomotriz.com/
 
-## Datos reales
+## Estructura
 
-El archivo `index.html` contiene un array `AUTOS` con los datos de ejemplo.
-Para usar datos reales del inventario, edita ese array o conecta a una API/ERP.
+```
+autos-ortiz-web/
+├── index.html          # Sitio público
+├── autos.json          # Datos de inventario
+├── admin/
+│   └── index.html      # Panel de administración
+├── img/autos/          # Fotos de los vehículos
+└── README.md
+```
 
 ---
 
-© 2025 Autos Ortiz — Todos los derechos reservados
+© 2026 Ortiz Automotriz — Todos los derechos reservados
 Desarrollado por CeluCenter MX
-
-## Docs completas
-
-📄 El doc detallado del proyecto (estructura, backend, flujo, etc.) está en:
-`~/.openclaw/workspace/autos-ortiz-info.html`
