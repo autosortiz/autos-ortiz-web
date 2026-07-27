@@ -1,5 +1,30 @@
 [
   {
+    "id": 102,
+    "marca": "Nissan",
+    "modelo": "Altima",
+    "año": 2015,
+    "version": "",
+    "km": "",
+    "combustible": "Gasolina",
+    "transmision": "",
+    "precioAntes": 180000,
+    "precioAhora": 165000,
+    "imagen": "img/autos/6-1785195874226/foto-01.jpeg",
+    "imagenes": [
+      "img/autos/6-1785195874226/foto-01.jpeg",
+      "img/autos/1-1785195865239/foto-02.jpeg",
+      "img/autos/2-1785195865239/foto-03.jpeg",
+      "img/autos/3-1785195865239/foto-04.jpeg",
+      "img/autos/4-1785195865239/foto-05.jpeg",
+      "img/autos/5-1785195865239/foto-06.jpeg",
+      "img/autos/6-1785195865239/foto-07.jpeg",
+      "img/autos/7-1785195865239/foto-08.jpeg"
+    ],
+    "badge": "A tratar",
+    "tag": "en-venta"
+  },
+  {
     "id": 101,
     "marca": "KIA",
     "modelo": "Sportage",
