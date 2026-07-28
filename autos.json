@@ -87,13 +87,13 @@
     "id": 99,
     "marca": "Kia",
     "modelo": "Sportage",
-    "año": 2020,
-    "version": "XL",
-    "km": "85,000 km",
+    "año": 2018,
+    "version": "GT Line WD",
+    "km": "83,000 km",
     "combustible": "Gasolina",
     "transmision": "Automática",
-    "precioAntes": 265000,
-    "precioAhora": 245000,
+    "precioAntes": 290000,
+    "precioAhora": 275000,
     "imagen": "img/autos/kia-sportage-2018/kia-sportage-2018-01.jpeg",
     "imagenes": [
       "img/autos/kia-sportage-2018/kia-sportage-2018-01.jpeg",
@@ -104,7 +104,7 @@
       "img/autos/kia-sportage-2018/kia-sportage-2018-06.jpeg",
       "img/autos/kia-sportage-2018/kia-sportage-2018-07.jpeg"
     ],
-    "badge": "Excelentes conciciones",
+    "badge": "Excelentes condiciones",
     "tag": "en-venta"
   },
   {
